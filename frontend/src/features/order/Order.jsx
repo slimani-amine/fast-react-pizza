@@ -8,10 +8,11 @@ import {
   formatCurrency,
   formatDate,
 } from '../../utils/helpers';
+import { useSelector } from 'react-redux';
 
 function Order() {
-  const order = useLoaderData();
-
+  const order = useSelector((state) => state.cart);
+  console.log(order);
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
